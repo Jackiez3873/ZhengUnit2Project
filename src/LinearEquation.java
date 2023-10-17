@@ -1,4 +1,4 @@
-import Math.java;
+import java.lang.Math;
 public class LinearEquation {
     private int x1;
     private int x2;
@@ -22,7 +22,7 @@ public class LinearEquation {
         return (y2 - y1) / (x2 - x1);
     }
     public String equation() {
-        if (yIntercept < 0 && slope() != 0) {
+        if (yIntercept() < 0 && slope() != 0) {
             return  "y = " + ((y2 - y1) + "/" + (x2 - x1)) + "x " + yIntercept();
         } else if (yIntercept() > 0 && slope() != 0) {
             return "y = " + ((y2 - y1) + "/" + (x2 - x1)) + "x +" + yIntercept();
@@ -31,10 +31,11 @@ public class LinearEquation {
         } else if (yIntercept() != 0 && slope() == 0) {
             return "y = " + yIntercept();
         }
+        return " ";
     }
-    public double coordinateForX(double x) {
+    public String coordinateForX(double x) {
         x = Math.round(x * 100) /100.0;
-        yCoordinate = roundedToHundredth(slope() * x + yIntercept());
+        double yCoordinate = roundedToHundredth(slope() * x + yIntercept());
         return "(" + x + " , " + yCoordinate + ")";
     }
     public String lineInfo() {
