@@ -1,4 +1,4 @@
-import java.lang.Math;
+
 public class LinearEquation {
     private int x1;
     private int x2;
@@ -19,13 +19,13 @@ public class LinearEquation {
     }
 
     public double slope() {
-        return (y2 - y1) / (x2 - x1);
+        return ((double)y2 - y1) / ((double)x2 - x1);
     }
     public String equation() {
         if (yIntercept() < 0 && slope() != 0) {
             return  "y = " + ((y2 - y1) + "/" + (x2 - x1)) + "x " + yIntercept();
         } else if (yIntercept() > 0 && slope() != 0) {
-            return "y = " + ((y2 - y1) + "/" + (x2 - x1)) + "x +" + yIntercept();
+            return "y = " + ((y2 - y1) + "/" + (x2 - x1)) + "x + " + yIntercept();
         } else if (yIntercept() == 0 && slope() != 0) {
             return "y = " + ((y2 - y1) + "/" + (x2 - x1)) + "x";
         } else if (yIntercept() != 0 && slope() == 0) {
