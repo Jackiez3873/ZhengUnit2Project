@@ -32,7 +32,7 @@ public class LinearEquationLogic {
         while (answer.equals("y")) {
             getCoordinateInfo();
             System.out.println("\n" + equation.lineInfo());
-            if (x2 == x1) {
+            if (x2 != x1) {
                 System.out.print("\nEnter a value for x: ");
                 double x = myScanner.nextDouble();
                 System.out.println("\nThe point on this line is: " + equation.coordinateForX(x));
