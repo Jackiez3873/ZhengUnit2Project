@@ -22,7 +22,7 @@ public class LinearEquation {
         if (x1 == x2) {
             return 0;
         }
-        return ((double)y2 - y1) / ((double)x2 - x1);
+        return roundedToHundredth(((double)y2 - y1) / ((double)x2 - x1));
     }
     public String equation() {
         String yOverX = " " + (y2 - y1) + "/" + (x2 - x1);
