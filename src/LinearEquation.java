@@ -19,7 +19,7 @@ public class LinearEquation {
     }
 
     public double slope() {
-        if (y1 == y2) {
+        if (x1 == x2) {
             return 0;
         }
         return ((double)y2 - y1) / ((double)x2 - x1);
@@ -59,7 +59,7 @@ public class LinearEquation {
         } else if (yIntercept() == 0 && slope() != 0) {
             return "y =" + yOverX + "x";
         } else if (yIntercept() != 0 && slope() == 0) {
-            return "y =" + yIntercept();
+            return "y = " + yIntercept();
         }
         return " ";
     }

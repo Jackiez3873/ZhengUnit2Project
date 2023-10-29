@@ -3,9 +3,14 @@ public class LinearEquationLogic {
     private Scanner myScanner;
     private LinearEquation equation;
 
+    private int x1;
+    private int x2;
+
     public LinearEquationLogic() {
         myScanner = new Scanner(System.in);
         equation = null; // will initialize from user input
+        x2 = 0;
+        x1 = 0;
     }
     public void start() {
         greet();
@@ -14,11 +19,11 @@ public class LinearEquationLogic {
     private void getCoordinateInfo() {
         System.out.print("\nEnter coordinate 1: ");
         String coordinate1 = myScanner.nextLine();
-        int x1 = Integer.parseInt(coordinate1.substring(1, coordinate1.indexOf(",")));
+        x1 = Integer.parseInt(coordinate1.substring(1, coordinate1.indexOf(",")));
         int y1 = Integer.parseInt(coordinate1.substring(coordinate1.indexOf(",") + 2, coordinate1.length() - 1));
         System.out.print("Enter coordinate 2: ");
         String coordinate2 = myScanner.nextLine();
-        int x2 = Integer.parseInt(coordinate2.substring(1, coordinate2.indexOf(",")));
+        x2 = Integer.parseInt(coordinate2.substring(1, coordinate2.indexOf(",")));
         int y2 = Integer.parseInt(coordinate2.substring(coordinate2.indexOf(",") + 2, coordinate2.length() - 1));
         equation = new LinearEquation(x1, y1, x2, y2);
     }
@@ -27,7 +32,7 @@ public class LinearEquationLogic {
         while (answer.equals("y")) {
             getCoordinateInfo();
             System.out.println("\n" + equation.lineInfo());
-            if (equation.slope() != 0) {
+            if (x2 == x1) {
                 System.out.print("\nEnter a value for x: ");
                 double x = myScanner.nextDouble();
                 System.out.println("\nThe point on this line is: " + equation.coordinateForX(x));
