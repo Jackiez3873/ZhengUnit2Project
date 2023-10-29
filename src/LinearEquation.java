@@ -19,7 +19,7 @@ public class LinearEquation {
     }
 
     public double slope() {
-        if (x1 == x2) {
+        if (y1 == y2) {
             return 0;
         }
         return ((double)y2 - y1) / ((double)x2 - x1);
@@ -33,15 +33,18 @@ public class LinearEquation {
         } else if ((x2 - x1) < 0) {
             yOverX = " -" + Math.abs(y2 - y1) + "/" + Math.abs(x2 - x1);
         }
-        if ((y2 - y1) % (x2 - x1) == 0) {
-            if ((x2 - x1) != 1) {
-                yOverX = " " + slope();
+        if ((x2 - x1) != 0) {
+            if ((y2 - y1) % (x2 - x1) == 0) {
+                if ((x2 - x1) != 1) {
+                    yOverX = " " + slope();
+                }
             }
         }
-
-        if ((x2 - x1) % (y2 - y1) == 0) {
-            if ((y2 - y1) != 1) {
-                yOverX = " " + slope();
+        if ((y2 - y1) != 0) {
+            if ((x2 - x1) % (y2 - y1) == 0) {
+                if ((y2 - y1) != 1) {
+                    yOverX = " " + slope();
+                }
             }
         }
         if (slope() == 1) {
