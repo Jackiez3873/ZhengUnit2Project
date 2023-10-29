@@ -27,9 +27,11 @@ public class LinearEquationLogic {
         while (answer.equals("y")) {
             getCoordinateInfo();
             System.out.println("\n" + equation.lineInfo());
-            System.out.print("\nEnter a value for x: ");
-            double x = myScanner.nextDouble();
-            System.out.println("\nThe point on this line is: " + equation.coordinateForX(x));
+            if (equation.slope() != 0) {
+                System.out.print("\nEnter a value for x: ");
+                double x = myScanner.nextDouble();
+                System.out.println("\nThe point on this line is: " + equation.coordinateForX(x));
+            }
             myScanner.nextLine();
             System.out.print("\nWould you like to enter another pair of coordinates? (y/n): ");
             answer = myScanner.nextLine();
